@@ -1,0 +1,31 @@
+<h1>Listing protocols</h1>
+
+<table>
+  <tr>
+    <th>Genus</th>
+    <th>Species</th>
+    <th>Cell or tissue type</th>
+    <th>Description</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @protocols.each do |protocol| %>
+  <tr>
+    <td><%= protocol.genus %></td>
+    <td><%= protocol.species %></td>
+    <td><%= protocol.cell_or_tissue_type %></td>
+    <td><%= protocol.description %></td>
+    <td><%= protocol.user_id %></td>
+    <td><%= link_to 'Show', protocol %></td>
+    <td><%= link_to 'Edit', edit_protocol_path(protocol) %></td>
+    <td><%= link_to 'Destroy', protocol, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Protocol', new_protocol_path %>

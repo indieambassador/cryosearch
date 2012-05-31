@@ -1,4 +1,6 @@
 Cryosearch::Application.routes.draw do
+  resources :protocols
+
   authenticated :user do
     root :to => 'home#index'
   end

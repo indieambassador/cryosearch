@@ -1,8 +1,8 @@
-require 'rbconfig'
-HOST_OS = RbConfig::CONFIG['host_os']
 source 'https://rubygems.org'
 gem 'rails', '3.2.3'
-gem 'sqlite3'
+gem 'sqlite3', :group => [:development, :test]
+gem 'pg', :group => :production
+gem 'thin'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
@@ -17,18 +17,11 @@ gem "capybara", ">= 1.1.2", :group => :test
 gem "database_cleaner", ">= 0.7.2", :group => :test
 gem "launchy", ">= 2.1.0", :group => :test
 gem "guard", ">= 0.6.2", :group => :development  
-case HOST_OS
-  when /darwin/i
-    gem 'rb-fsevent', :group => :development
-    gem 'growl', :group => :development
-  when /linux/i
-    gem 'libnotify', :group => :development
-    gem 'rb-inotify', :group => :development
-  when /mswin|windows/i
-    gem 'rb-fchange', :group => :development
-    gem 'win32console', :group => :development
-    gem 'rb-notifu', :group => :development
-end
+
+#modified via https://github.com/RailsApps/rails3-application-templates/issues/33
+gem 'rb-fsevent', :group => :development
+gem 'growl', :group => :development
+
 gem "guard-bundler", ">= 0.1.3", :group => :development
 gem "guard-rails", ">= 0.0.3", :group => :development
 gem "guard-livereload", ">= 0.3.0", :group => :development
@@ -43,3 +36,6 @@ gem "twitter-bootstrap-rails", ">= 2.0.3", :group => :assets
 gem "therubyracer", :group => :assets, :platform => :ruby
 gem "simple_form"
 gem "will_paginate", ">= 3.0.3"
+
+#added by doug
+gem "heroku"

@@ -1,3 +1,11 @@
+<script type="text/javascript">
+(function($) {
+	$(document).ready(function() {
+		$('#protocol_description').wysiwyg();
+	});
+})(jQuery);
+</script>
+
 <%= simple_form_for(@protocol) do |f| %>
   <%= f.error_notification %>
 
@@ -17,7 +25,7 @@
     </div>
     <div class='row'>
       <div class='span12'>
-        <%= f.input :instructions %>
+        <%= f.input :instructions, :name => "Protocol",  %>
         <%= f.input :references %>        
       </div>
     </div>

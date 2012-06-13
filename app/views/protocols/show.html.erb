@@ -1,30 +1,43 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Genus:</b>
-  <%= @protocol.genus %>
-</p>
+<h1>
 
-<p>
-  <b>Species:</b>
-  <%= @protocol.species %>
-</p>
+  <em><%= @protocol.genus %>
+  <%= @protocol.species %> (<%= @protocol.cell_or_tissue_type %>)</em>
+</h1>
+<div class='row'>
+  <div class='span12'>
+    <h3>Intro/Description:</h3>
+    <p><%= @protocol.description %></p>
+  </div>
+</div>
+<div class='row'>
+  <div class='span12'>
+    <h3>Materials:</h3>
+    <p><%= @protocol.materials %></p>
 
-<p>
-  <b>Cell or tissue type:</b>
-  <%= @protocol.cell_or_tissue_type %>
-</p>
+  </div>
+</div>
+<div class='row'>
+  <div class='span12'>
+    <h3>Protocol:</h3>
+      <p><%= @protocol.instructions %></p> 
+  </div>
+</div>
+<div class='row'>
+  <div class='span12'>
+    <h3>References:</h3>
+      <p><%= @protocol.references %></p> 
+  </div>
+</div>
+<div class='row'>
+  <div class='span12'>
+    <b>Added by:</b> <%= @protocol.user.email %>
+  </div>
+</div>
 
-<p>
-  <b>Description:</b>
-  <%= @protocol.description %>
-</p>
 
-<p>
-  <b>User:</b>
-  <%= @protocol.user_id %>
-</p>
-
-
+<% if current_user %>
 <%= link_to 'Edit', edit_protocol_path(@protocol) %> |
 <%= link_to 'Back', protocols_path %>
+<% end %>

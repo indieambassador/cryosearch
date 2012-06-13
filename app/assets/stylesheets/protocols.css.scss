@@ -1,3 +1,23 @@
 // Place all the styles related to the protocols controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#protocol_description {
+}
+
+#protocol_materials, #protocol_description {
+  height: 150px;
+}
+
+#protocol_instructions {
+  height: 200px;
+}
+
+#protocol_references {
+  height: 100px;
+}
+
+textarea[id^='protocol'], input[id^='protocol'] {
+  width: 95%;
+}

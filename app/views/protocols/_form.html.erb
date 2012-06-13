@@ -2,10 +2,27 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :genus %>
-    <%= f.input :species %>
-    <%= f.input :cell_or_tissue_type %>
-    <%= f.input :description %>
+    <div class='row'>
+      <div class='span4'>    <%= f.input :genus %></div>
+      <div class='span4'>    <%= f.input :species %></div>
+      <div class='span4'>    <%= f.input :cell_or_tissue_type %></div>
+    </div>
+    <div class='row'>
+      <div class='span4'>
+        <%= f.input :materials %>    
+      </div>  
+      <div class='span8'>  
+        <%= f.input :description %>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='span12'>
+        <%= f.input :instructions %>
+        <%= f.input :references %>        
+      </div>
+    </div>
+
+
     <%= f.input :user_id, :as => :hidden, :input_html =>  {:value => current_user.id} %>
   </div>
 

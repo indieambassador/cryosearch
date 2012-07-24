@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120613032148) do
+ActiveRecord::Schema.define(:version => 20120724185235) do
 
   create_table "protocols", :force => true do |t|
     t.string   "genus"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20120613032148) do
     t.text     "materials"
     t.text     "instructions"
     t.text     "references"
+    t.string   "title"
   end
 
   add_index "protocols", ["cell_or_tissue_type"], :name => "index_protocols_on_cell_or_tissue_type"

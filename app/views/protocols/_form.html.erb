@@ -1,7 +1,17 @@
 <script type="text/javascript">
 (function($) {
 	$(document).ready(function() {
-		$('#protocol_description').wysiwyg();
+		$('.wysiwyg').redactor({
+		  css: '../redactor-form.css',
+		  buttons: ['html', '|', 'formatting', '|', 'bold', 'italic', 'deleted', '|',
+      'unorderedlist', 'orderedlist', 'outdent', 'indent', '|',
+      'image', 'video', 'table', 'link', '|',
+      'alignleft', 'aligncenter', 'alignright', 'justify', '|',
+      'horizontalrule', 'fullscreen']
+		
+		});
+	  // $('#protocol_description').redactor();
+	 //  $('#protocol_description').redactor();
 	});
 })(jQuery);
 </script>
@@ -22,16 +32,16 @@
     </div>
     <div class='row'>
       <div class='span4'>
-        <%= f.input :materials %>    
+        <%= f.input :materials, :input_html => {:class => 'wysiwyg'} %>    
       </div>  
       <div class='span8'>  
-        <%= f.input :description %>
+        <%= f.input :description, :input_html => {:class => 'wysiwyg'} %>
       </div>
     </div>
     <div class='row'>
       <div class='span12'>
-        <%= f.input :instructions, :name => "Protocol",  %>
-        <%= f.input :references %>        
+        <%= f.input :instructions, :name => "Protocol", :input_html => {:class => 'wysiwyg'}  %>
+        <%= f.input :references, :input_html => {:class => 'wysiwyg'} %>        
       </div>
     </div>
 
@@ -40,6 +50,6 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, :value => 'Save' %>
   </div>
 <% end %>

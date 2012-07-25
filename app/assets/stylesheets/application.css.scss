@@ -9,11 +9,16 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+ *= require 'bootstrap_and_overrides'
+ *= require 'fonts'
+ *= require 'home'
+ *= require 'protocols'
+ *= require 'redactor'
 */
 
+
 .content {
-  background-color: #eee;
+  //background-color: #eee;
   padding: 20px;
   margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
   -webkit-border-radius: 0 0 6px 6px;

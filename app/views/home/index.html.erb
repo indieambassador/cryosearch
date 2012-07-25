@@ -4,17 +4,32 @@
     <img  src="http://placehold.it/250x150" alt="CryoSearch">
   </div>
   <div class="span9">
-    <h1 id="cryosearch">CryoSearch</h1>
+    <h1 id="cryosearch">Find the Protocol You Need. Fast.</h1>
+    <p>Twee wolf pork belly bicycle rights. Umami selvage high life skateboard sartorial, mumblecore street art. Echo park hoodie post-ironic mumblecore beard umami. Biodiesel you probably haven't heard of them odd future fap. Chillwave williamsburg whatever four loko seitan sriracha. Hoodie before they sold out 8-bit ethical bicycle rights wayfarers. Fingerstache seitan cosby sweater artisan.</p>
+<p class="pull-right">    Not a member yet? <%= link_to 'Sign up', new_user_registration_path, :class => 'btn btn-primary' %>
+</p>    
   </div>
 </div>
 
 <div class='row'>
-  <div class='span12'>
-    <h2>Current Protocols</h2>
+  <div class='span4'>
+    <h2>Latest Protocols</h2>
     <% @protocols.each do |p| %>
       <li>
         <em><%= link_to "#{p.genus} #{p.species}", p %></em> added on <%= p.created_at.to_date %>
       </li>
     <% end %>
+  </div>
+  <div class='span4'>
+    <h2>Popular Protocols</h2>
+    <% @protocols.each do |p| %>
+      <li>
+        <em><%= link_to "#{p.genus} #{p.species}", p %></em> added on <%= p.created_at.to_date %>
+      </li>
+    <% end %>
+  </div>
+  <div class='span4'>
+    <h2>Add a Protocol</h2>
+      <a class="btn btn-primary btn-large" href="/protocols/new"><i class="icon-plus-sign"></i> Submit a protocol</a>
   </div>
 </div>
